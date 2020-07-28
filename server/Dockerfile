@@ -58,6 +58,8 @@ RUN chmod go+w -R $HOME && \
     groupmod -g "$APP_GID" "$USERNAME" && \
     chmod -R go+w /tmp/downloaded_packages /etc/rstudio/rsession.conf
 
+RUN usermod "$USERNAME" -a -G root
+
 RUN chgrp root -R /usr/local/lib/R/site-library
 
 COPY fix.sh /usr/local/bin/fix.sh
