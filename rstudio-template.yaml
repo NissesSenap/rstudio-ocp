@@ -19,17 +19,6 @@ metadata:
   name: rstudio
 
 objects:
-- apiVersion: "v1"
-  kind: "PersistentVolumeClaim"
-  metadata:
-    name: ${NAME}-pvc
-  spec:
-    accessModes:
-      - "ReadWriteMany"
-    resources:
-      requests:
-        storage: ${STORAGE_SIZE}
-
 - apiVersion: v1
   kind: Secret
   metadata:
